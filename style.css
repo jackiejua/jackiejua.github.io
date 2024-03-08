@@ -1,10 +1,19 @@
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
+#bookmarks {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
-  li {
-    display: inline;
-  }
+#horiz {
+  display: inline;
+}
+
+#portrait {
+  height: 500px;
+  width: 400px;
+  border-radius: 20px;
+  display: block;
+  margin-left: 5px;
+  
+}
