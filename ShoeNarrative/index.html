@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sneaker Seeker </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src='assets/js/React/Component/ReactDataTable.js' type='text/babel'></script>
+
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3-scale-radial.js"></script>
+
+
+
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+    <div class="container-fluid text-center">
+        <div class="row">
+            <div class="col-12">
+                <h1 id="WebName"> Sneaker Seeker </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div id="LilShoe">
+                    <img src="animShoe.png" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-6">
+                <h2 id="WebDesc"> A dive into Jackie's top owned and wanted shoes of 2023 </h2>
+            </div>
+            <div class="col-3">
+                <i class="fa-solid fa-sort"></i>
+                <i class="fa-solid fa-filter"></i>
+                <i class="fa-solid fa-credit-card"></i>
+                <i class="fa-solid fa-cash-register"></i>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-6">
+                <div class="Category"> The Reason </div>
+                <p class="Info"> I'm a slowly-developing sneakerhead. After over a year of working as a shoe sale
+                    associate,
+                    it naturally became a topic of interest. I started learning more about brands, styles, and
+                    everything that makes the "sneaker game"
+                    so popular and expensive. </p>
+                <p class="Info">I wanted to take
+                    this opportunity to create my own online wardrobe as a way to rank what I have
+                    and what I want. It's a collection of my past shoes as well as my future ones. </p>
+                <p class="Info">The goal is to help me get a better understanding of what
+                    shoes I prefer and where the commonalities are. It could also reduce impulse shoe buying because
+                    I'll already have
+                    shoes that I know I want, and I can save up for them instead of buying something I'll rarely wear.
+                </p>
+            </div>
+
+            <div class="col-6">
+                <div class="Category"> The Breakdown </div>
+                <p class="Info"> After gathering data by searching the Champs Sports, Footlocker, Vans, and Converse
+                    websites, as well as
+                    retrieving my past receipts, I used the information found there, along with my own thoughts and feelings, to break every
+                    down shoe into eight categories: </p>
+                <li class="List"> Name </li>
+                <li class="List"> Brand </li>
+                <li class="List"> Colorway</li>
+                <li class="List"> Comfortability (1-10) </li>
+                <li class="List"> Price </li>
+                <li class="List"> Type </li>
+                <li class="List"> Appearance (1-10) </li>
+                <li class="List"> Status (Owned or Wanted)</li>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="Category">Video About Jordan Brand</div>
+                <iframe class="jordanVid" src="https://www.youtube.com/embed/ZhzQ3HxvIBQ?si=9ONLwDRdRjXuaDUo"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+               
+            </div>
+            <div class="col-6">
+                <div class="Category">Visualization #1: Non-Data</div>
+                <div class="graphDesc">My Favorite Shoe</div>
+                <img src="forumbestshoe.avif" class="img-fluid">
+                <div class="graphConcl"> The Adidas Forum Low is my favorite shoe of all time. It's comfortable,
+                    stylish, and goes great with most of the clothes that I own. It's definitely my most worn pair.
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="Category">Visualization #2: Circular Barplot</div>
+                <div class="graphDesc">A collection of all the shoes I own and want in their respective brands</div>
+                <div class="overflow-x-auto">
+                    <div id="my_dataviz"></div>
+
+                    <div class="graphConcl"> Conclusion: Nike and Jordan are my top two brands overall (which means nike
+                        is definitely
+                        number one - because Jordan is a sub brand of it) and Adidas is a good third. </div>
+                </div>
+            </div>
+            <script>
+
+                // set the dimensions and margins of the graph
+                var margin = { top: 100, right: 0, bottom: 0, left: 0 }, s
+                width = 650 - margin.left - margin.right,
+                    height = 650 - margin.top - margin.bottom,
+                    innerRadius = 80,
+                    outerRadius = Math.min(width, height) / 2;   // the outerRadius goes from the middle of the SVG area to the border
+
+                // append the svg object
+                var svg = d3.select("#my_dataviz")
+                    .append("svg")
+                    .attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom)
+                    .append("g")
+                    .attr("transform", "translate(" + (width / 2 + margin.left) + "," + (height / 2 + margin.top) + ")");
+
+                //d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/7_OneCatOneNum.csv", function(data) {
+                //console.log(data);
+                let data = [
+                    { brand: "Nike", quantOwned: 18 },
+                    { brand: "Vans", quantOwned: 6 },
+                    { brand: "Adidas", quantOwned: 9 },
+                    { brand: "On", quantOwned: 1 },
+                    { brand: "Reebok", quantOwned: 4 },
+                    { brand: "Timberland", quantOwned: 1 },
+                    { brand: "Jordan", quantOwned: 14 },
+                    { brand: "Crocs", quantOwned: 1 },
+                    { brand: "Converse", quantOwned: 4 },
+                    { brand: "New Balance", quantOwned: 5 },
+                    { brand: "Champion", quantOwned: 1 },
+                    { brand: "Asics", quantOwned: 1 },
+                    { brand: "UGG", quantOwned: 2 },
+                    { brand: "PUMA", quantOwned: 3 },
+                    { brand: "Bathing Ape", quantOwned: 3 },
+                    { brand: "Birkenstock", quantOwned: 1 }
+
+                ];
+                // Scales
+                var x = d3.scaleBand()
+                    .range([0, 2 * Math.PI])    // X axis goes from 0 to 2pi = all around the circle. If I stop at 1Pi, it will be around a half circle
+                    .align(0)                  // This does nothing
+                    .domain(data.map(function (d) { return d.brand; })); // The domain of the X axis is the list of states.
+                var y = d3.scaleRadial()
+                    .range([innerRadius, outerRadius])   // Domain will be define later.
+                    .domain([0, 18]); // Domain of Y is from 0 to the max seen in the data
+
+                // Add the bars
+                svg.append("g")
+                    .selectAll("path")
+                    .data(data)
+                    .enter()
+                    .append("path")
+                    .attr("fill", "#283044")
+                    .attr("d", d3.arc()     // imagine your doing a part of a donut plot
+                        .innerRadius(innerRadius)
+                        .outerRadius(function (d) { return y(d['quantOwned']); })
+                        .startAngle(function (d) { return x(d.brand); })
+                        .endAngle(function (d) { return x(d.brand) + x.bandwidth(); })
+                        .padAngle(0.02)
+                        .padRadius(innerRadius))
+
+                // const tooltip = d3.select("body")
+                //     .append("div")
+                //     .attr("class", "tooltip");
+
+                var tooltip = d3.select("#my_dataviz")
+                    .append("div")
+                    .style("opacity", 0)
+                    .attr("class", "tooltip")
+                    .style("background-color", "white")
+                    .style("border", "solid")
+                    .style("border-width", "1px")
+                    .style("border-radius", "5px")
+
+                //.style("padding", "10px")
+
+
+                var mouseover = function (d) {
+                    tooltip
+                        .style("opacity", 1)
+                }
+
+                var mousemove = function (d) {
+                    tooltip
+                        .html("Number of this shoe owned and wanted = " + d.quantOwned)
+                        // .style("left", (d3.mouse(this)[0] + 90) + "px") // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
+                        // .style("top", (d3.mouse(this)[1]) + "px")
+                        .style("left", (d3.event.pageX + 10) + "px")
+                        .style("top", (d3.event.pageY - 30) + "px");
+
+                }
+
+                var mouseleave = function (d) {
+                    tooltip
+                        .transition()
+                        .duration(200)
+                        .style("opacity", 0)
+                }
+
+                // Add the labels
+                svg.append("g")
+                    .selectAll("g")
+                    .data(data)
+                    .enter()
+                    .append("g")
+                    .attr("text-anchor", function (d) { return (x(d.brand) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) < Math.PI ? "end" : "start"; })
+                    .attr("transform", function (d) { return "rotate(" + ((x(d.brand) + x.bandwidth() / 2) * 180 / Math.PI - 90) + ")" + "translate(" + (y(d['quantOwned']) + 10) + ",0)"; })
+                    .append("text")
+                    .text(function (d) { return (d.brand) })
+                    .attr("transform", function (d) { return (x(d.brand) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) < Math.PI ? "rotate(180)" : "rotate(0)"; })
+                    .style("font-size", "20px")
+                    .attr("alignment-baseline", "middle")
+                    .on("mouseover", mouseover)
+                    .on("mousemove", mousemove)
+                    .on("mouseleave", mouseleave)
+                // });
+
+            </script>
+
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="Category">Visualization #3/4: Changing Bar Graph</div>
+                <div class="graphDesc">The amount of shoes I own per brand. The amount of shoes I want per brand</div>
+                <div id="buttonSpace">
+                    <div class="overflow-x-auto">
+                        <button onclick="update(data1)">Owned</button>
+                        <button onclick="update(data2)">Wanted</button>
+                        <div id="my_dataviz_two"></div>
+
+                    </div>
+                </div>
+                <div class="graphConcl"> Conclusion: Nike, Jordan, and Vans are my top three owned shoe brands. Nike,
+                    Jordan, and Adidas are my top wanted shoe brands. There are some shoe brands that belong only on one
+                    list (either wanted or owned).
+                     </div>
+                <script>
+
+                    // create 2 data_set
+                    var data1 = [
+                        { group: "Nike", value: 9 },
+                        { group: "Converse", value: 3 },
+                        { group: "Adidas", value: 4 },
+                        { group: "Jordan", value: 6 },
+                        { group: "PUMA", value: 1 },
+                        { group: "New Balance", value: 3 },
+                        { group: "Champion", value: 1 },
+                        { group: "Timberland", value: 1 },
+                        { group: "Croc", value: 1 },
+                        { group: "UGG", value: 0 },
+                        { group: "Reebok", value: 2 },
+                        { group: "Asics", value: 0 },
+                        { group: "Bathing Ape", value: 0 },
+                        { group: "Birkinstock", value: 0 },
+                        { group: "Vans", value: 5 },
+                        { group: "On", value: 0 }
+                    ];
+
+                    var data2 = [
+                        { group: "Nike", value: 9 },
+                        { group: "Converse", value: 1 },
+                        { group: "Adidas", value: 5 },
+                        { group: "Jordan", value: 8 },
+                        { group: "PUMA", value: 2 },
+                        { group: "New Balance", value: 2 },
+                        { group: "Champion", value: 0 },
+                        { group: "Timberland", value: 0 },
+                        { group: "Croc", value: 0 },
+                        { group: "UGG", value: 2 },
+                        { group: "Reebok", value: 2 },
+                        { group: "Asics", value: 1 },
+                        { group: "Bathing Ape", value: 3 },
+                        { group: "Birkinstock", value: 1 },
+                        { group: "Vans", value: 1 },
+                        { group: "On", value: 1 }
+                    ];
+
+                    // set the dimensions and margins of the graph
+                    var margin = { top: 50, right: 50, bottom: 90, left: 80 },
+                        width = 1000 - margin.left - margin.right,
+                        height = 400 - margin.top - margin.bottom;
+
+                    // append the svg object to the body of the page
+                    var svg = d3.select("#my_dataviz_two")
+                        .append("svg")
+                        .attr("width", width + margin.left + margin.right)
+                        .attr("height", height + margin.top + margin.bottom)
+                        .append("g")
+                        .attr("transform",
+                            "translate(" + margin.left + "," + margin.top + ")");
+
+                    // X axis
+                    var x = d3.scaleBand()
+                        .range([0, width])
+                        .domain(data1.map(function (d) { return d.group; }))
+                        .padding(0.2);
+                    svg.append("g")
+                        .attr("transform", "translate(0," + height + ")")
+                        .call(d3.axisBottom(x))
+
+                    // Add Y axis
+                    var y = d3.scaleLinear()
+                        .domain([0, 10])
+                        .range([height, 0]);
+                    svg.append("g")
+                        .attr("class", "myYaxis")
+                        .call(d3.axisLeft(y));
+
+                    // A function that create / update the plot for a given variable:
+                    function update(data) {
+
+                        var u = svg.selectAll("rect")
+                            .data(data)
+
+                        u
+                            .enter()
+                            .append("rect")
+                            .merge(u)
+                            .transition()
+                            .duration(1000)
+                            .attr("x", function (d) { return x(d.group); })
+                            .attr("y", function (d) { return y(d.value); })
+                            .attr("width", x.bandwidth())
+                            .attr("height", function (d) { return height - y(d.value); })
+                            .attr("fill", "#07393c")
+                        svg.append("text")
+                            .attr("class", "x label")
+                            .attr("text-anchor", "end")
+                            .attr("x", width - 400)
+                            .attr("y", height + 60)
+                            .text("Shoe Brand");
+                        svg.append("text")
+                            .attr("class", "y label")
+                            .attr("text-anchor", "end")
+                            .attr("y", - 50)
+                            .attr("x", -50)
+                            .attr("dy", ".75em")
+                            .attr("transform", "rotate(-90)")
+                            .text("Amount of Shoes");
+                    }
+
+                    // Initialize the plot with the first dataset
+                    update(data1)
+
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-center reactTable">
+        <div class="row">
+            <div class="Category"> React Table </div>
+            <div id="tableStyle"></div>
+            <div class="col-12">
+                <div id="react-data-table">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

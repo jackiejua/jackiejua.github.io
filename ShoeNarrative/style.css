@@ -1,0 +1,146 @@
+body {
+    background-color: #EBF5EE;
+    margin: 0;
+    padding: 0;
+
+}
+
+#WebName {
+    font-family: Air;
+    text-align: center;
+    font-size: 75px;
+    color: #283044;
+    border: 6px solid black;
+    word-wrap: break-word;
+
+}
+
+#WebDesc {
+    font-family: Impact;
+    font-size: 32px;
+    word-wrap: break-word;
+    padding-top: 25px;
+}
+
+@font-face {
+    font-family: Ananda;
+    src: url(ananda-black-font/AnandaBlackPersonalUseRegular-rg9Rx.ttf);
+}
+
+@font-face {
+    font-family: Air;
+    src: url(air-travelers-font/AirtravelerspersonaluseBdit-gxgyE.otf);
+}
+
+.Category {
+    font-size: 35px;
+    font-family: 'Arial Narrow Bold';
+    word-wrap: break-word;
+    font-weight: bold;
+    text-decoration: underline;
+    padding-top: 35px;
+}
+
+.Info {
+    font-size: 21px;
+    /*font-weight: bold;*/
+    text-align: left;
+    font-family: 'Lucida Sans Regular';
+    padding-top: 10px;
+    word-wrap: break-word;
+}
+
+.List {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+#LilShoe {
+    width: 100px;
+    height: 60px;
+    animation: mymove 5s infinite;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+@media (max-width: 768px) {
+    #LilShoe {
+        animation: none;
+    }
+}
+
+@keyframes mymove {
+    50% {
+        transform: rotate(180deg);
+    }
+}
+
+.jordanVid {
+    max-width: 100%;
+    height: auto;
+    padding-top: 20px;
+}
+
+
+.graphDesc {
+    font-size: 30px;
+    word-wrap: break-word;
+}
+
+.graphConcl {
+    word-wrap: break-word;
+    font-size: 20px;
+    padding-top: 20px;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+    border: 3px solid ;
+}
+
+#buttonSpace{
+    padding-top: 50px;
+
+
+}
+
+button {
+    background-color: #78A1BB;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    width: 100px;
+}
+
+button:hover {
+    background-color: #07393c;
+    color: white;
+    
+  }
+
+#tableStyle{
+    padding-top: 30px;
+    
+}
+
+#react-data-table {
+    border: 3px solid;
+    background-color: white;
+    
+}
+
+.tooltip {
+    position: absolute;
+}
+
+#my_dataviz {
+    overflow-x: scroll;
+}
+
+.custom-overflow {
+    overflow-x: scroll;
+}
