@@ -10,6 +10,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
     <link rel="stylesheet" href="style.css" />
@@ -18,33 +21,32 @@
 <body>
     <div id="whole" class="container-fluid">
         <div id="firstbox">
-        <div class="row">
-            <div class="col-md-12">
-                &nbsp;
-                <h1 id="welcome">Jacqueline Juarez</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    &nbsp;
+                    <h1 id="welcome">Jacqueline Juarez</h1>
+                </div>
             </div>
+
+            <hr>
         </div>
 
-        <hr>
-    </div>
-
-        <div class="row" style="text-align:center">
+        <div class="row">
             <div class="col-md-12">
                 <ul id="bookmarks">
                     <li id="horiz"><a href="#welcome">Welcome</a></li>
-                    <li id="horiz"><a href="#about">About Me</a></li>
                     <li id="horiz"><a href="#contact">Contact</a></li>
-                    <li id="horiz"><a href="#artifacts">Artifacts</a></li>
+                    <li id="horiz"><a href="#projects">Projects</a></li>
                 </ul>
             </div>
         </div>
 
         <hr>
 
-        <div class="row" style="text-align:center">
+        <div class="row">
             <div class="col-md-12">
                 &nbsp;
-                <h3> Hello, my name is Jacqueline Rose Juarez! Welcome to my portfolio website.</h3>
+                <h2 id="intro"> Hello, my name is Jacqueline Rose Juarez! Welcome to my portfolio website</h2>
             </div>
         </div>
 
@@ -55,41 +57,61 @@
 
         <div class="row">
             <div class="col-md-4">
-               
+
                 <img id="portrait" class="img-fluid" src="270Port.png">
-            
+
             </div>
             <div class="col-md-8">
-                <h3 id="about">About Me</h3>
-                <p>I am a 19 year old, Mexican-American, female student at Boise State University. I am currently a sophomore, and am expected to graduate in 2026. I am bilingual and
+                <h2 class="topic">About Me</h2>
+                <p>I am a 19 year old, Mexican-American, female student at Boise State University. I am currently a
+                    sophomore, and am expected to graduate in 2026. I am bilingual and
                     have a lot
                     of interest in game design and website development</p>
-                <h3>Education</h3>
+
+                    <hr>
+
+                <h2 class="topic">Education</h2>
                 <p>College: Boise State University</p>
                 <p>Major: GIMM (Games, Interactive Media, and Mobile Technology)</p>
                 <p>Expected Graduation: 2026</p>
                 <hr>
-                <a href="https://play2048.co/">My favorite game</a>
-                <a href="mailto:jackiejuarez@u.boisestate.edu">Email</a>
-                <h4 id="contact">My Resume Here</h4>
+        
+                
+                <h2 class="topic" id="contact">Contact</h2> 
+                <a href="mailto:juajackie19@gmail.com"><i class="fa-regular fa-envelope fa-2xl"></i></a>
+                <a href="https://www.linkedin.com/in/jacquelinerjuarez/"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
+                <a href="https://github.com/jackiejua"><i class="fa-brands fa-github fa-2xl"></i></a>
+                <hr>
+<p> </p>
+                <h2 class="topic" >Resume</h2>
+
+
+               <!--- <a href="https://play2048.co/">My favorite game</a> -->
             </div>
+
         </div>
 
 
 
         <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 id="projects">My Projects</h2>
+        </div>
+    </div>
 
-
+        <hr>
 
         <div class="row">
             <div class="col-md-12">
 
-                <h2 id="artifacts">Purse Pursuit</h2>
+                <h2 class="topic">Purse Pursuit </h2>
+
                 <div class="row">
                     <div class="col-md-6">
                         <p>Purse Pursuit is the first game I made. It was during my first semester as a GIMM student
                             and
-                            was a project for the 110 class.</p>
+                            was a project for the 110 class</p>
                         <p> I based it off of my favorite scene from the movie "White Chicks"</p>
                         <p>Skills I developed and used: </p>
                         <ul>
@@ -101,11 +123,13 @@
                         </ul>
                     </div>
                     <div class="col-md-6">
-                        <iframe width="560" height="315"
+
+                        <iframe class="videoBackground" width="560" height="315"
                             src="https://www.youtube.com/embed/_CIGwrQDXjc?si=JGFu76yOVtb2sG5r"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
+
                     </div>
 
 
@@ -118,11 +142,11 @@
         <div class="row">
             <div class="col-md-12">
 
-                <h2>Sneaker Seeker</h2>
+                <h2 class="topic">Sneaker Seeker</h2>
                 <div class="row">
                     <div class="col-md-6">
                         <p>Sneaker Seeker is a mobile data narrative website</p>
-                        <p> It's a collection and representation of all the sneakers that I own and want.</p>
+                        <p> It's a collection and representation of all the sneakers that I own and want</p>
                         <p>Skills I developed and used: </p>
                         <ul>
                             <li>Web design</li>
@@ -132,7 +156,7 @@
                         </ul>
                     </div>
                     <div class="col-md-6" style="text-align: center;">
-                        <h4>Check Out My Website</h4>
+                        <h4>Check Out My Website: </h4>
                         <h3><a href="ShoeNarrative/index.html">Sneaker Seeker</a></h3>
                     </div>
                 </div>
@@ -143,12 +167,12 @@
             <div class="row">
                 <div class="col-md-12">
 
-                    <h2>Amu Tombolos</h2>
+                    <h2 class="topic">Amu Tombolos</h2>
                     <div class="row">
                         <div class="col-md-6">
                             <p>Amu Tombolos is an interactive comic about the emptiness in an atom</p>
                             <p> It was a group project that allowed us to use technology and science to create a deep
-                                story about how important each element of an atom is (in more ways than one). </p>
+                                story about how important each element of an atom is (in more ways than one) </p>
                             <p>Skills I developed and used: </p>
                             <ul>
                                 <li>Teamwork</li>
@@ -158,7 +182,7 @@
                             </ul>
                         </div>
                         <div class="col-md-6">
-                            <iframe width="560" height="315"
+                            <iframe class="videoBackground" width="560" height="315"
                                 src="https://www.youtube.com/embed/vHdZ5RzGARc?si=OozapA4eDUO54SiO"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -169,11 +193,22 @@
                     </div>
                 </div>
 
-                <hr>
-
-            </div>
             </div>
         </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <ul id="bookmarks">
+                    <li id="horiz"><a href="#welcome">Welcome</a></li>
+                    <li id="horiz"><a href="#contact">Contact</a></li>
+                    <li id="horiz"><a href="#projects">Projects</a></li>
+                </ul>
+            </div>
+        </div>
+        &nbsp;
+
+        
+    </div>
     </div>
 </body>
 

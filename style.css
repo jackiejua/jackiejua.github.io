@@ -1,12 +1,66 @@
-
 #bookmarks {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  text-align: center;
+  overflow: hidden;
+  background-color: #668dad;
+  top: 0;
+}
+
+
+
+#horiz a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#horiz a:hover {
+  background-color: #577aa2;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+
+#welcome {
+  color: white;
+  font-family:Verdana;
+  font-weight: bold;
+  -webkit-text-stroke: .9px #0a1011;
+  font-size: 55px;
+  letter-spacing: 5px;
+  word-spacing: 5px;
+  width: 17ch;
+  border-right: 4px solid black;
+  margin: 2rem auto;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 4s steps(18, end), blink-caret 0.5s step-end infinite alternate;
+}
+
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@-webkit-keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+html {
+  border: solid;
+  border-color: #577aa2;
+  border-width: 5px;
 }
 
 #horiz {
   display: inline;
+  float: left;
 }
 
 #portrait {
@@ -15,15 +69,52 @@
   border-radius: 20px;
   display: block;
   margin-left: 5px;
-  
+
+
+
 }
 
-#whole{
-  background-color: #F1F1F1;
+#whole {
+  background-color: #F1F1F2;
+  color: #668dad;
+  -webkit-text-stroke: .5px #0a1011;
 }
 
-#firstbox{
-  background-color: #779EB2;
+#firstbox {
+  background-color: #668dad;
   text-align: center;
+
+
+}
+
+
+
+.topic {
+  color: #577aa2;
+  -webkit-text-stroke: .5px #0a1011;
+}
+
+#intro {
+  color: #577aa2;
+  -webkit-text-stroke: .4px #0a1011;
+  text-align: center;
+}
+
+.videoBackground {
+  border-color: #668dad;
+  border-width: 15px;
+  border-style: solid;
+}
+
+#projects {
+  color: white;
+  -webkit-text-stroke: .9px #0a1011;
+  font-size: 40px;
+  text-align: center;
+  border-color: #668dad;
+  border-width: 15px;
+  border-style: solid;
+  background-color: #668dad;
+
 
 }
