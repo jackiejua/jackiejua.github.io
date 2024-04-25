@@ -6,6 +6,7 @@
   overflow: hidden;
   background-color: #668dad;
   top: 0;
+  word-wrap: break-word;
 }
 
 
@@ -26,7 +27,7 @@
 
 #welcome {
   color: white;
-  font-family:Verdana;
+  font-family: Verdana;
   font-weight: bold;
   -webkit-text-stroke: .9px #0a1011;
   font-size: 55px;
@@ -38,15 +39,25 @@
   white-space: nowrap;
   overflow: hidden;
   animation: typing 4s steps(18, end), blink-caret 0.5s step-end infinite alternate;
+  word-wrap: break-word;
 }
 
-@-webkit-keyframes typing {
+@keyframes typing {
   from {
     width: 0;
   }
+  
 }
 
-@-webkit-keyframes blink-caret {
+@media (max-width: 730px) {
+  #welcome {
+      animation: none;
+      word-wrap: break-word;
+      width: auto;
+  }
+}
+
+@keyframes blink-caret {
   50% {
     border-color: transparent;
   }
@@ -56,6 +67,7 @@ html {
   border: solid;
   border-color: #577aa2;
   border-width: 5px;
+  word-wrap: break-word;
 }
 
 #horiz {
@@ -69,6 +81,7 @@ html {
   border-radius: 20px;
   display: block;
   margin-left: 5px;
+  
 
 
 
@@ -78,13 +91,13 @@ html {
   background-color: #F1F1F2;
   color: #668dad;
   -webkit-text-stroke: .5px #0a1011;
+   word-wrap: break-word;
 }
 
 #firstbox {
   background-color: #668dad;
   text-align: center;
-
-
+  word-wrap: break-word;
 }
 
 
@@ -104,6 +117,8 @@ html {
   border-color: #668dad;
   border-width: 15px;
   border-style: solid;
+  max-width: 100%;
+  height: auto;
 }
 
 #projects {
@@ -115,6 +130,11 @@ html {
   border-width: 15px;
   border-style: solid;
   background-color: #668dad;
+  word-wrap: break-word;
 
 
+}
+
+#contactNames {
+  font-size: 15px;
 }
