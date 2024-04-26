@@ -11,7 +11,7 @@
 
 
 
-#horiz a {
+.horiz a {
   display: block;
   color: white;
   text-align: center;
@@ -19,7 +19,7 @@
   text-decoration: none;
 }
 
-#horiz a:hover {
+.horiz a:hover {
   background-color: #577aa2;
 }
 
@@ -40,6 +40,8 @@
   overflow: hidden;
   animation: typing 4s steps(18, end), blink-caret 0.5s step-end infinite alternate;
   word-wrap: break-word;
+  font-display: swap;
+
 }
 
 @keyframes typing {
@@ -70,7 +72,7 @@ html {
   word-wrap: break-word;
 }
 
-#horiz {
+.horiz {
   display: inline;
   float: left;
 }
