@@ -1,226 +1,306 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jacqueline Juarez</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font (Tailwind default) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="JRJSage.png">
+    <style>
+        /* Custom scrollbar for a slightly cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
 
+        ::-webkit-scrollbar-thumb {
+            background: #a7c9a9;
+            /* Matches sage */
+            border-radius: 4px;
+        }
 
-    <link rel="stylesheet" href="style.css" />
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8aa98c;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Override default font family for custom colors */
+        :root {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <script>
+        // Custom Tailwind Configuration for the specified color palette
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sage': {
+                            50: '#F2F6F2',
+                            100: '#E6EAE6',
+                            200: '#D5DED5',
+                            300: '#A7C9A9', // Primary Sage Green
+                            400: '#8AA98C',
+                            500: '#6D8A6F',
+                            900: '#4A4E69', // Deep Charcoal/Brownish Navy for text/dark mode
+                        },
+                        'cream': {
+                            100: '#FAF9F6', // Off-White/Neutral Background
+                            200: '#F2E9E4', // Warm Light Brown/Beige Accent
+                        },
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body>
-    <div id="whole" class="container-fluid">
-        <div id="firstbox">
-            <div class="row">
-                <div class="col-md-12">
-                    &nbsp;
-                    <h1 id="welcome">Jacqueline Juarez</h1>
+<body class="bg-cream-100 text-sage-900">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-cream-100/90 backdrop-blur-sm shadow-md">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#home" class="transition hover:opacity-80">
+                <img src="JRJSage.png" alt="JRJ Logo" class="h-12">
+            </a>
+            <div class="space-x-4 md:space-x-8 text-sm font-medium hidden sm:flex">
+                <a href="#bio" class="hover:text-sage-300 transition">About Me</a>
+                <a href="#projects" class="hover:text-sage-300 transition">Projects</a>
+                <a href="#links" class="hover:text-sage-300 transition">Contact</a>
+            </div>
+            <a href="#links"
+                class="sm:hidden block p-2 rounded-lg bg-sage-300 text-cream-100 hover:bg-sage-400 transition">
+                <!-- Placeholder Icon for Menu/Links -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-link">
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                </svg>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-24">
+
+        <!-- 1. Hero/Bio Section -->
+        <section id="bio" class="grid md:grid-cols-2 gap-12 items-center min-h-[60vh] pt-12">
+            <div>
+                <p class="text-base text-sage-500 mb-2 font-medium tracking-wider uppercase">Hello, I'm Jacqueline
+                    Juarez</p>
+                <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight">
+                    <span class="text-sage-300">END-TO-END</span> Building complete,<br>
+                    robust web and mobile applications.
+                </h1>
+                <div class="mt-8 text-lg leading-relaxed text-sage-900/80">
+                    <p>
+                        I am a developer specializing in Website Development and Mobile App Development. My passion lies
+                        in bridging the gap between design and functionality, creating highly scalable and intuitive web
+                        and mobile applications. I thrive in environments that value clean code and user-centric design.
+                    </p>
+                </div>
+                <a href="#projects"
+                    class="mt-8 inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-xl shadow-lg text-cream-100 bg-sage-500 hover:bg-sage-400 transition duration-300 ease-in-out transform hover:scale-[1.01]">
+                    View My Work &rarr;
+                </a>
+            </div>
+            <!-- Profile Image Placeholder (Modern, Rounded Style) -->
+            <div class="flex justify-center md:justify-end">
+                <div
+                    class="w-full max-w-sm h-80 bg-cream-200 rounded-3xl shadow-2xl shadow-sage-300/40 border-4 border-sage-500 overflow-hidden">
+                    <img src="270Port.png" alt="Me" class="w-full h-full object-cover">
                 </div>
             </div>
+        </section>
 
-            <hr>
-        </div>
+        <!-- 2. Projects Section -->
+        <section id="projects" class="pt-20">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Featured Projects</h2>
 
-        <div class="row">
-            <div class="col-md-12">
-                <ul id="bookmarks">
-                    <li class="horiz"><a href="#welcome">Welcome</a></li>
-                    <li class="horiz"><a href="#contact">Contact</a></li>
-                    <li class="horiz"><a href="#projects">Projects</a></li>
-                </ul>
-            </div>
-        </div>
+            <div class="grid md:grid-cols-3 gap-8">
 
-        <hr>
-
-        <div class="row">
-            <div class="col-md-12">
-                &nbsp;
-                <h2 id="intro"> Hello, my name is Jacqueline Rose Juarez! Welcome to my portfolio website</h2>
-            </div>
-        </div>
-
-
-        &nbsp;
-
-        <hr>
-
-        <div class="row">
-            <div class="col-md-4">
-
-                <img id="portrait" class="img-fluid" src="270Port.png">
-
-            </div>
-            <div class="col-md-8">
-                <h2 class="topic">About Me</h2>
-                <p>I am a 20 year old, Mexican-American, female student at Boise State University. I am currently a
-                    junior, and am expected to graduate in 2026. I am bilingual and
-                    have a lot
-                    of interest in game design and website development</p>
-
-                <hr>
-
-                <h2 class="topic">Education</h2>
-                <p>College: Boise State University</p>
-                <p>Major: GIMM (Games, Interactive Media, and Mobile Technology)</p>
-                <p>Expected Graduation: 2026</p>
-                <hr>
-
-
-                <h2 class="topic" id="contact">Contact</h2>
-                <a href="mailto:juajackie19@gmail.com"><i class="fa-regular fa-envelope fa-2xl"></i></a>
-                <a href="https://www.linkedin.com/in/jacquelinerjuarez/"><i
-                        class="fa-brands fa-linkedin fa-2xl"></i></a>
-                <a href="https://github.com/jackiejua"><i class="fa-brands fa-github fa-2xl"></i></a>
-                <p></p>
-                <div id="contactNames">
-                <div class="row">
-                        <div class="col-md-4">
-                            <p>Email: juajackie19@gmail.com</p>
-                        </div>
-                        <div class="col-md-4">
-                            <p>LinkedIn: jacquelinerjuarez</p>
-                        </div>
-                        <div class="col-md-4">
-                            <p>GitHub: jackiejua</p>
-                        </div>
-                        
+                <!-- Project Card 1: Million Changes Mobile App -->
+                <div
+                    class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 ease-in-out overflow-hidden border border-sage-100">
+                    <div class="h-48 bg-sage-300/50 overflow-hidden flex items-center justify-center">
+                        <img src="MCL2.png" alt="Million Changes preview" class="w-full h-full object-contain">
                     </div>
-
-                    <!--- <a href="https://play2048.co/">My favorite game</a> -->
-                </div>
-
-            </div>
-
-
-
-            <hr>
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 id="projects">My Projects</h2>
-                </div>
-            </div>
-
-            <hr>
-
-            <div class="row">
-                <div class="col-md-12">
-
-                    <h2 class="topic">Purse Pursuit </h2>
-
-                    <div class="row">
-                        <div class="col-md-7">
-                            <p>Purse Pursuit is the first game I made. It was during my first semester as a GIMM student
-                                and
-                                was a project for the 110 class</p>
-                            <p> I based it off of my favorite scene from the movie "White Chicks"</p>
-                            <p>Skills I developed and used: </p>
-                            <ul>
-                                <li>Game design and building in Unity</li>
-                                <li>C# coding in Unity</li>
-                                <li>Adobe asset creation in Photoshop</li>
-                                <li>Adobe Animate</li>
-                                <li>Adobe Premiere Pro</li>
-                            </ul>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Million Changes</h3>
+                        <p class="text-sage-900/70 text-sm mb-4">
+                            A mobile application focused on promoting environemntal sustainability through user engagement,
+                            challenges, and a personal garden that grows with your efforts.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="inline-block bg-sage-100 text-sage-900 text-xs font-semibold px-3 py-1 rounded-full">React
+                                Native</span>
+                            <span
+                                class="inline-block bg-cream-200 text-sage-900 text-xs font-semibold px-3 py-1 rounded-full">Node.js</span>
+                            <span
+                                class="inline-block bg-sage-300 text-sage-900 text-xs font-semibold px-3 py-1 rounded-full">MySQL</span>
+                            <span
+                                class="inline-block bg-sage-900 text-cream-100 text-xs font-semibold px-3 py-1 rounded-full">Redux</span>
+                            <span
+                                class="inline-block bg-sage-100 text-sage-900 text-xs font-semibold px-3 py-1 rounded-full">Google
+                                Play</span>
                         </div>
-                        <div class="col-md-5">
-
-                            <iframe class="videoBackground" 
-                                src="https://www.youtube.com/embed/_CIGwrQDXjc?si=JGFu76yOVtb2sG5r"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
-
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-
-            <hr>
-
-            <div class="row">
-                <div class="col-md-12">
-
-                    <h2 class="topic">Sneaker Seeker</h2>
-                    <div class="row">
-                        <div class="col-md-5">
-                            <p>Sneaker Seeker is a mobile data narrative website</p>
-                            <p> It's a collection and representation of all the sneakers that I own and want</p>
-                            <p>Skills I developed and used: </p>
-                            <ul>
-                                <li>Web design</li>
-                                <li>Html, CSS, Javascript</li>
-                                <li>React.js</li>
-                                <li>d3.js</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-7" style="text-align: center;">
-                            <h4>Check Out My Website: </h4>
-                            <h3><a href="ShoeNarrative/index.html">Sneaker Seeker</a></h3>
+                        <div class="mt-4 flex gap-3">
+                            <a href="https://play.google.com/store/apps/details?id=com.millionchanges"
+                                class="text-sage-500 hover:text-sage-400 font-medium text-sm transition">Download &rarr;</a>
                         </div>
                     </div>
                 </div>
 
-                <hr>
-
-                <div class="row">
-                    <div class="col-md-12">
-
-                        <h2 class="topic">Amu Tombolos</h2>
-                        <div class="row">
-                            <div class="col-md-7">
-                                <p>Amu Tombolos is an interactive comic about the emptiness in an atom</p>
-                                <p> It was a group project that allowed us to use technology and science to create a
-                                    deep
-                                    story about how important each element of an atom is (in more ways than one) </p>
-                                <p>Skills I developed and used: </p>
-                                <ul>
-                                    <li>Teamwork</li>
-                                    <li>Storyboarding</li>
-                                    <li>Creating comic panels in Adobe Photoshop</li>
-                                    <li>User interactivity in Unity</li>
-                                </ul>
-                            </div>
-                            <div class="col-md-5">
-                                <iframe class="videoBackground" 
-                                    src="https://www.youtube.com/embed/vHdZ5RzGARc?si=OozapA4eDUO54SiO"
-                                    title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen></iframe>
-
-
-                            </div>
+                <!-- Project Card 2: CampUs Mobile App -->
+                <div
+                    class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 ease-in-out overflow-hidden border border-sage-100">
+                    <div class="h-48 bg-cream-200 flex items-center justify-center overflow-hidden">
+                        <img src="BT.png" alt="CampUs preview" class="w-full h-full object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">CampUs - Beam App</h3>
+                        <p class="text-sage-900/70 text-sm mb-4">
+                            A mobile application designed to enhance the college campus experience by providing real-time
+                            updates, campus maps, and specialized tours for students.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="inline-block bg-cream-200 text-sage-900 text-xs font-semibold px-3 py-1 rounded-full">React
+                                Native</span>
+                            <span
+                                class="inline-block bg-sage-900 text-cream-100 text-xs font-semibold px-3 py-1 rounded-full">Redux</span>
+                            <span
+                                class="inline-block bg-sage-300 text-sage-900 text-xs font-semibold px-3 py-1 rounded-full">Maps
+                                API</span>
+                            <span
+                                class="inline-block bg-sage-100 text-sage-900 text-xs font-semibold px-3 py-1 rounded-full">WebSocket</span>
+                            <span
+                                class="inline-block bg-cream-200 text-sage-900 text-xs font-semibold px-3 py-1 rounded-full">App
+                                Store</span>
+                        </div>
+                        <div class="mt-4 flex gap-3">
+                            <a href="https://play.google.com/store/apps/details?id=com.CampUs&hl=en_US"
+                                class="text-sage-500 hover:text-sage-400 font-medium text-sm transition">Download &rarr;</a>
                         </div>
                     </div>
-
                 </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-md-12">
-                    <ul id="bookmarks">
-                        <li class="horiz"><a href="#welcome">Welcome</a></li>
-                        <li class="horiz"><a href="#contact">Contact</a></li>
-                        <li class="horiz"><a href="#projects">Projects</a></li>
-                    </ul>
+
+                <!-- Project Card 3: Beam Tours Website -->
+                <div
+                    class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 ease-in-out overflow-hidden border border-sage-100">
+                    <div class="h-48 bg-sage-100 flex items-center justify-center overflow-hidden">
+                        <img src="BT.png" alt="Beam Tours preview" class="w-full h-full object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Beam Tours - Website</h3>
+                        <p class="text-sage-900/70 text-sm mb-4">
+                            Full-stack web application used to manage and showcase campus tours, integrating with the CampUs
+                            mobile app for a seamless user experience.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="inline-block bg-sage-900 text-cream-100 text-xs font-semibold px-3 py-1 rounded-full">React</span>
+                            <span
+                                class="inline-block bg-sage-100 text-sage-900 text-xs font-semibold px-3 py-1 rounded-full">Node.js</span>
+                            <span
+                                class="inline-block bg-cream-200 text-sage-900 text-xs font-semibold px-3 py-1 rounded-full">Express</span>
+                            <span
+                                class="inline-block bg-sage-300 text-sage-900 text-xs font-semibold px-3 py-1 rounded-full">MongoDB</span>
+                            <span
+                                class="inline-block bg-sage-900 text-cream-100 text-xs font-semibold px-3 py-1 rounded-full">AWS</span>
+                        </div>
+                        <div class="mt-4 flex gap-3">
+                            <a href="https://tours.broncobeam.com/"
+                                class="text-sage-500 hover:text-sage-400 font-medium text-sm transition">Visit Site &rarr;</a>
+                        </div>
+                    </div>
                 </div>
+
             </div>
-            &nbsp;
+        </section>
 
+        <!-- 3. Email/LinkedIn/GitHub Section (The "Links" section) -->
+        <section id="links" class="pt-20">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Connect With Me</h2>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-6">
 
+                <!-- Link Card: GitHub -->
+                <a href="https://github.com/jackiejua" target="_blank"
+                    class="block p-6 bg-sage-900 rounded-xl text-cream-100 shadow-xl hover:bg-sage-500 transition duration-300 group">
+                    <div class="flex items-center space-x-4">
+                        <!-- GitHub Icon Placeholder -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-github">
+                            <path
+                                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5.5-1.2.5-2.4 0-3.5" />
+                            <path d="M11 15h2" />
+                            <path d="M12 18H10" />
+                            <path d="M12 2L10 0" />
+                        </svg>
+                        <span class="text-lg font-semibold group-hover:text-sage-900">GitHub</span>
+                    </div>
+                    <p class="mt-2 text-sm opacity-80 group-hover:text-sage-900">Explore my code repositories and
+                        contributions.</p>
+                </a>
+
+                <!-- Link Card: LinkedIn -->
+                <a href="https://www.linkedin.com/in/jacquelinerjuarez/" target="_blank"
+                    class="block p-6 bg-sage-300 rounded-xl text-sage-900 shadow-xl hover:bg-sage-400 transition duration-300 group">
+                    <div class="flex items-center space-x-4">
+                        <!-- LinkedIn Icon Placeholder -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-linkedin">
+                            <path d="M16 8a6 6 0 0 0-6 6v7H6V11h4v2a6 6 0 0 0 6-6z" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                        <span class="text-lg font-semibold group-hover:text-cream-100">LinkedIn</span>
+                    </div>
+                    <p class="mt-2 text-sm opacity-80 group-hover:text-cream-100">See my professional experience and
+                        endorsements.</p>
+                </a>
+
+                <!-- Link Card: Email -->
+                <a href="mailto:juajackie19@gmail.com"
+                    class="block p-6 bg-cream-200 rounded-xl text-sage-900 shadow-xl hover:bg-cream-100 transition duration-300 group">
+                    <div class="flex items-center space-x-4">
+                        <!-- Email Icon Placeholder -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-mail">
+                            <rect width="20" height="16" x="2" y="4" rx="2" />
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                        </svg>
+                        <span class="text-lg font-semibold group-hover:text-sage-500">Email Me</span>
+                    </div>
+                    <p class="mt-2 text-sm opacity-80 group-hover:text-sage-500">Direct line for job opportunities and
+                        collaborations.</p>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-20 border-t border-sage-200 bg-cream-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-sm text-sage-900/60">
+            &copy; 2025 Jacqueline. All rights reserved.
         </div>
+    </footer>
+
 </body>
 
 </html>
